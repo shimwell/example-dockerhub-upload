@@ -5,9 +5,13 @@ on:
     tags: 'v*.*.*'
 
 jobs:
-  test:
+  main:
     runs-on: ubuntu-latest
     steps:
+      - 
+        name: Set env
+        uses: actions/checkout@v2
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -26,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: shimwell/example-dh-upload:${GITHUB_REF#refs/*/}
+          tags: shimwell/example-dh-upload:$RELEASE_VERSION
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
