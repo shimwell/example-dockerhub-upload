@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: openmc/openmc:${GITHUB_REF#refs/*/}
+          tags: shimwell/example-dh-upload:${GITHUB_REF#refs/*/}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
