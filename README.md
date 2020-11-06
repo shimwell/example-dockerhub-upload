@@ -10,7 +10,7 @@ appropriate tag.
 
 To demonstrate the use of build-arg when builind a dockerfile there are two
 additional docker images made. One where the .yml file passes a false value to
-the build args and one where a true value is passed
+the build args and one where a true value is passed.
 
 - pushing to develop branch will build and upload a docker image with the develop=with-true tag
 - pushing to develop branch will build and upload a docker image with the develop=with-false tag
