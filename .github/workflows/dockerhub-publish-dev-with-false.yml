@@ -26,9 +26,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: shimwell/example-dh-upload:develop-with-true
+          tags: shimwell/example-dh-upload:develop-with-false
           build-args: |
-            build_setting=true
+            build_setting=false
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
