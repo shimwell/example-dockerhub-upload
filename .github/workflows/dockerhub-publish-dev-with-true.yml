@@ -1,4 +1,4 @@
-name: dockerhub-publish-develop
+name: dockerhub-publish-develop-with-true
 
 on:
   push:
